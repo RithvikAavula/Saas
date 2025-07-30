@@ -1,13 +1,5 @@
 {
-  "headers": {
-    "/**": {
-      "Access-Control-Allow-Origin": "*"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "routes": {
+    "/**": "index.html"
+  }
 }
