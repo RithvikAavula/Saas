@@ -72,7 +72,7 @@ export function AuthPage() {
         data: {
           full_name: fullName,
         },
-        emailRedirectTo: 'https://saas-gamma-vert-27.vercel.app/auth',
+        emailRedirectTo: 'https://saas-3t7t.onrender.com/auth',
       },
     });
 
@@ -97,7 +97,7 @@ export function AuthPage() {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: "https://saas-gamma-vert-27.vercel.app/ResetPassword",
+        redirectTo: "https://saas-3t7t.onrender.com/ResetPassword",
       });
 
       if (error) throw error;
