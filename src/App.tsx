@@ -3,13 +3,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom"; // ✅ HashRouter used
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Payment from "./pages/Payment";
 import { AuthPage } from "./components/AuthPage";
-import ResetPassword from "./components/ResetPassword";
+import ResetPassword from "./components/ResetPassword"; // ✅ Fixed import
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,15 +28,15 @@ const App = () => {
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <HashRouter>
+            <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/auth" element={<AuthPage />} />
                 <Route path="/payment" element={<Payment />} />
-                <Route path="/ResetPassword" element={<ResetPassword />} />
+                <Route path="/ResetPassword" element={<ResetPassword />} /> {/* ✅ Added */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
-            </HashRouter>
+            </BrowserRouter>
           </TooltipProvider>
         </ThemeProvider>
       </QueryClientProvider>
@@ -45,3 +45,4 @@ const App = () => {
 };
 
 export default App;
+
